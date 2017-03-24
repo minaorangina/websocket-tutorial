@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://js.pusher.com/4.0/pusher.min.js"></script>
+    <script src="/script.js"></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="tweetbox-container">
+        <form class="tweetbox" action="/tweet" method="post">
+          <label for="tweetbox">Compose tweet</label>
+          <textarea name="tweetbox" type="text" rows="2" placeholder="Say something..."></textarea>
+        </form>
+      </div>
+      <div class="stream-container">
+        <div class="tweet-container">
+          <div class="tweet">
+            hey
+          </div>
+        </div>
+        <div class="tweet-container">
+          <div class="tweet">
+            there
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

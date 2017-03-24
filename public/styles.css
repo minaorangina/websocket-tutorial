@@ -1,0 +1,59 @@
+body {
+  background-color: #F5F8FA;
+}
+
+.app-container {
+  width: 60vw;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tweetbox-container, .stream-container {
+  background-color: rgb(245, 255, 254);
+  border: 1px solid #9FA0A2;
+  border-radius: 3px;
+}
+
+.tweetbox-container {
+  margin-top: 20%;
+  padding: 20px;
+}
+
+textarea {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  padding: 5px;
+  height: 40px;
+  font-size: 20px;
+}
+
+textarea::placeholder {
+  color: rgb(221, 224, 230);
+}
+
+.stream-container {
+  margin-top: 20px;
+  min-height: 400px;
+}
+
+.tweet-container {
+  margin: 0 10px;
+  padding: 5px;
+  border: 1px solid #9FA0A2;
+  min-height: 60px;
+  background-color: white;
+  border-bottom: none;
+}
+
+.tweet-container:first-child {
+  margin-top: 10px;
+}
+
+.tweet-container:last-child {
+  border-bottom: 1px solid #9FA0A2;
+}
+
+.tweet {
+  background-color: grey;
+}
