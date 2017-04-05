@@ -11,3 +11,5 @@ const pusher = new Pusher({
 pusher.trigger('push-tutorial-channel', 'new-tweet', {
   "message": "hello world"
 });
+
+module.exports = pusher;

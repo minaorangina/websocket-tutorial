@@ -6,6 +6,16 @@ if (document.readyState !== 'loading') {
 
 function ready () {
 
+  const form = document.querySelector('form');
+  form.addEventListener('submit', function (event) {
+
+    event.preventDefault();
+    const formActionUrl = form.action;
+    const formData = new FormData(form);
+
+    postTweet(formActionUrl, formData);
+  });
+
   Pusher.logToConsole = true;
 
   const pusher = new Pusher('pusher-key', {
@@ -15,14 +25,28 @@ function ready () {
 
   const channel = pusher.subscribe('push-tutorial-channel');
   channel.bind('new-tweet', function (data) {
-    console.info(data);
+    console.info('INCOMING!', data);
     displayTweet(data.message);
+  });
+}
+
+function postTweet (url, data) {
+  fetch(url, {
+    method: 'POST',
+    body: data
+  })
+  .then(function (res) {
+    if (res.status === 200) {
+      document.querySelector('form').reset();
+    }
+  })
+  .catch(function (err) {
+      console.error(err)
   });
 }
 
 function displayTweet (data) {
   const streamContainer = document.querySelector('.stream-container');
-  console.log(createTweetDiv(data));
   streamContainer.insertBefore(createTweetDiv(data), streamContainer.firstChild);
 }
 
